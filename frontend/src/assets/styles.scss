@@ -1,0 +1,167 @@
+$primary: #f3ebeb;
+$secondary: #f19317;
+$ground: #4b4949;
+$user: #ff3838;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+.header {
+  background-color: $ground;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 70px;
+}
+
+.auth,
+.noAuth {
+  display: flex;
+  span {
+    color: $secondary;
+    margin-left: 20px;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary;
+    margin-right: 300px;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: $primary;
+
+    a {
+      color: $primary;
+      margin-right: 20px;
+      text-decoration: none;
+      border: 2px solid $secondary;
+      padding: 10px;
+      border-radius: 20px;
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: $secondary;
+        transform: scale(1.03);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}
+
+form {
+  width: 360px;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: $primary;
+
+  .controls {
+    margin: 40px;
+  }
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+  }
+}
+input {
+  padding: 8px 1px;
+  border-radius: 4px;
+  border: 1px solid $primary;
+  font-size: 1em;
+  width: 100%;
+}
+button {
+  margin-top: 30px;
+  border-radius: 36px;
+  color: $primary;
+  background: $secondary;
+  border: 0;
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: $ground;
+  }
+  &:active {
+    cursor: pointer;
+    transform: scale(0.92);
+  }
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+
+  h2 {
+    margin-top: 50px;
+  }
+
+  span {
+    color: $user;
+  }
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h2,
+  h3 {
+    margin-top: 40px;
+  }
+}
+
+.footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $ground;
+  color: $primary;
+  padding: 20px;
+  a {
+    text-decoration: none;
+    color: $primary;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .auth p {
+    margin-right: 7px;
+  }
+  .logo img {
+    width: 0;
+  }
+}

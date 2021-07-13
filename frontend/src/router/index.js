@@ -18,7 +18,7 @@ const routes = [
     beforeEnter: (_to, _from, next) => {
       if (!auth.value) next({ name: 'Home' })
       else next()
-    }
+    },
   },
   {
     path: '/login',
@@ -27,7 +27,7 @@ const routes = [
     beforeEnter: (_to, _from, next) => {
       if (auth.value) next({ name: 'Dashboard' })
       else next()
-    }
+    },
   },
   {
     path: '/register',
@@ -36,19 +36,18 @@ const routes = [
     beforeEnter: (_to, _from, next) => {
       if (auth.value) next({ name: 'Dashboard' })
       else next()
-    }
+    },
   },
   {
     path: '/:catchAll(.*)',
     name: 'not-found',
-    component: () => import('../views/NotFound.vue')
-  }
+    component: () => import('../views/NotFound.vue'),
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
 })
-
 
 export default router

@@ -5,18 +5,25 @@
         ><img src="../assets/logo.png" alt="logo" width="50"
       /></router-link>
     </div>
+
+    <div v-if="auth" class="username">
+      <p>
+        User:<span>{{ UserName }}</span>
+      </p>
+    </div>
+
     <div class="actions">
-      <div v-if="!auth" class="noAuth">
-        <div class="links">
-          <router-link to="/login" class="nav-link">Login</router-link>
-          <router-link to="/register" class="nav-link">Register</router-link>
-        </div>
-      </div>
       <div v-if="auth" class="auth">
-        <p>User :<span>{{ UserName }}</span></p>
         <div class="links">
           <router-link to="/dashboard" class="navbar-brand">Dashboard</router-link>
           <a href="#" class="nav-link" @click="logout">Logout</a>
+        </div>
+      </div>
+
+      <div v-else class="noAuth">
+        <div class="links">
+          <router-link to="/login" class="nav-link">Login</router-link>
+          <router-link to="/register" class="nav-link">Register</router-link>
         </div>
       </div>
     </div>

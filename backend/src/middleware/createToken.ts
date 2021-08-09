@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 
-export const maxAge = 3 * 24 * 60 * 60
+export const maxAge = 3 * 24 * 60 * 60 // 3 days
 
 export const createToken = (id: any) => {
   const jwtSecretKey: string = process.env.JWT_TOKEN || ''

@@ -32,12 +32,22 @@ $user: #ff3838;
 }
 
 .username {
+  border: 2px solid $primary;
+  padding: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
   p {
     color: $primary;
   }
   span {
     color: $secondary;
     margin-left: 10px;
+  }
+  .log {
+    color: $primary;
   }
 }
 
@@ -66,12 +76,18 @@ $user: #ff3838;
       &:hover {
         text-decoration: underline;
         color: $secondary;
+        transform: scale(1.05);
       }
       &:active {
-        transform: scale(0.92);
+        transform: scale(0.95);
       }
     }
   }
+}
+
+.login,
+.register {
+  margin-top: 130px;
 }
 
 form {

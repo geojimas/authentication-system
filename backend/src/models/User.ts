@@ -1,4 +1,3 @@
-
 import { model, Schema } from 'mongoose'
 import { UserInterface } from 'src/types/UserInterface'
 
@@ -11,11 +10,11 @@ const userSchema = new Schema<UserInterface>({
     type: String,
     required: true,
     unique: true,
-    lowercase: true
+    lowercase: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
 })
 

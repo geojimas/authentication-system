@@ -12,10 +12,12 @@ const app: Application = express()
 
 // Middleware
 app.use(helmet())
-app.use(cors({
-  credentials: true,
-  origin: ['http://localhost:3000', 'http://localhost:8080', 'http://localhost:4200']
-}))
+app.use(
+  cors({
+    credentials: true,
+    origin: ['http://localhost:3000', 'http://localhost:8080', 'http://localhost:4200'],
+  })
+)
 app.use(morgan('dev'))
 app.use(json())
 app.use(express.urlencoded({ extended: true }))

@@ -4,19 +4,19 @@ import createPersistedState from 'vuex-persistedstate'
 export default createStore({
   state: {
     authenticated: false,
-    userName: '',
+    UserData: {},
   },
   mutations: {
     SET_AUTH: (state, payload) => (state.authenticated = payload),
-    SET_NAME: (state, payload) => (state.userName = payload),
+    SET_USER: (state, payload) => (state.UserData = payload),
   },
   actions: {
     setAuth: ({ commit }, payload) => commit('SET_AUTH', payload),
-    setName: ({ commit }, payload) => commit('SET_NAME', payload),
+    setUser: ({ commit }, payload) => commit('SET_USER', payload),
   },
   getters: {
-    getName(state) {
-      return state.userName
+    getUser(state) {
+      return state.UserData
     },
     getIfIsAuth(state) {
       return state.authenticated

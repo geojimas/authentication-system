@@ -1,9 +1,14 @@
 <template>
-  <div class="animate__animated animate__zoomIn">
+  <div class="login animate__animated animate__zoomIn">
     <form @submit.prevent="submit">
       <h2>Login</h2>
       <div class="controls">
-        <input type="text" v-model="data.email" name="email" required placeholder="email" />
+        <input
+          type="email"
+          v-model="data.email"
+          name="email"
+          required
+          placeholder="email" />
       </div>
       <div class="controls">
         <input
@@ -47,7 +52,7 @@ export default {
         )
         .then(response => {
           store.dispatch('setAuth', true)
-          store.dispatch('setName', response.data.User.name)
+          store.dispatch('setUser', response.data.User)
           router.push('/dashboard')
 
           Swal.fire({

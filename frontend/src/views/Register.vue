@@ -1,5 +1,5 @@
 <template>
-  <div class="animate__animated animate__zoomIn">
+  <div class="register animate__animated animate__zoomIn">
     <form @submit.prevent="submit">
       <h2>Sign up</h2>
 
@@ -7,7 +7,7 @@
         <input type="text" v-model="data.name" name="name" required placeholder="Name" />
       </div>
       <div class="controls">
-        <input type="text" v-model="data.email" name="email" required placeholder="email" />
+        <input type="email" v-model="data.email" name="email" required placeholder="email" />
       </div>
       <div class="controls">
         <input
@@ -51,8 +51,8 @@ export default {
           password: data.password,
         })
         .then(response => {
-          result.value = response.data.user.name
-          store.dispatch('setName', result.value)
+          result.value = response.data.User
+          store.dispatch('setUser', result.value)
           router.push('/login')
 
           Swal.fire({

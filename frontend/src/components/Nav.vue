@@ -7,9 +7,15 @@
     </div>
 
     <div v-if="auth" class="username">
-      <p>
-        User:<span>{{ UserName }}</span>
-      </p>
+      <h5>
+        <span class="log">Logged in as :</span>
+      </h5>
+      <div class="log">
+        Name:<span>{{ UserName.name }}</span>
+      </div>
+      <div class="log">
+        Email:<span>{{ UserName.email }}</span>
+      </div>
     </div>
 
     <div class="actions">
@@ -44,7 +50,7 @@ export default {
     const router = useRouter()
     const auth = computed(() => store.state.authenticated)
     const UserName = computed(() => {
-      return store.getters.getName
+      return store.getters.getUser
     })
 
     const logout = () => {

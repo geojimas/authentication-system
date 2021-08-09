@@ -1,5 +1,5 @@
 <template>
-  <div class="notFound">
+  <div class="notFound login animate__animated animate__zoomIn">
     <h1><i class="far fa-frown"></i></h1>
     <div class="in">
       <h1>Page not Found</h1>

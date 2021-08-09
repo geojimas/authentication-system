@@ -1,13 +1,8 @@
-
 import jwt from 'jsonwebtoken'
 import { NextFunction, Response } from 'express'
 import { IGetUserAuthInfoRequest } from 'src/types/UserInfoInterface'
 
-export const isAuth = (
-  req: IGetUserAuthInfoRequest,
-  res: Response,
-  next: NextFunction,
-) => {
+export const isAuth = (req: IGetUserAuthInfoRequest, res: Response, next: NextFunction) => {
   const authHeader = req.headers['cookie']
   // let token : string = ''
   // if (authHeader) token  = authHeader.slice(7)
@@ -20,7 +15,6 @@ export const isAuth = (
     const decoded = jwt.verify(token, jwtSecretKey)
     req.user = decoded // IGetUserAuthInfoRequest Interface
     return next()
-
   } catch (error) {
     console.log(error)
     if (error.message === 'jwt expired') {

@@ -16,7 +16,7 @@ const routes = [
     name: 'Dashboard',
     component: () => import('../views/Dashboard.vue'),
     beforeEnter: (_to, _from, next) => {
-      if (!auth.value) next({ name: 'Home' })
+      if (!auth.value) next({ name: 'Login' })
       else next()
     },
   },

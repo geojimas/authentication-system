@@ -1,9 +1,10 @@
 <template>
   <div v-if="auth" class="dashboard animate__animated animate__zoomIn">
-    <h2>
-      Welcome back <span>{{ UserName.name }}</span> !!
-    </h2>
-    <h2>Only Logged Users can watch this page</h2>
+    <h1>
+      Welcome <span>{{ UserName.name }}</span> !!
+    </h1>
+    <h1>You are logged In !!</h1>
+    <h2>Only Logged Users can watch this page.</h2>
   </div>
 </template>
 

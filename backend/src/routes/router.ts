@@ -1,12 +1,16 @@
+// Libraries
 import express from 'express'
+// Middlewares
 import { isAuth } from '../middleware/isAuth'
-import { authPage, logIn, logOut, signUp } from '../controllers/userController'
+// Controllers
+import { authPage, logIn, logout, signUp } from '../controllers/userController'
+
 export const router = express.Router()
 
+// Public Routes
 router.post('/register', signUp)
-
 router.post('/login', logIn)
 
-router.get('/logout', isAuth, logOut)
-
+// Protected Routes
+router.get('/logout', isAuth, logout)
 router.get('/dashboard', isAuth, authPage)

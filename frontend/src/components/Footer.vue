@@ -4,7 +4,7 @@
       <p>Copyright © 2021 by Dimitris Georgiadis</p>
     </div>
     <div>
-      <a href="https://github.com/Jimgeo98" target="_BLANK">Github</a>
+      <a href="https://github.com/geojimas" target="_BLANK">Github</a>
     </div>
   </footer>
 </template>

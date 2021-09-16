@@ -18,8 +18,13 @@
           placeholder="password"
         />
       </div>
-
       <button>Sign up</button>
+      <div class="acc">
+        <p>
+          Already have an Account ??
+          <router-link to="/login" class="navbar-brand"> Log in</router-link>
+        </p>
+      </div>
     </form>
   </div>
 </template>
@@ -63,6 +68,7 @@ export default {
           })
         })
         .catch(error => {
+          console.log(error)
           Swal.fire({
             title: 'error!',
             text: error.response.data.message,

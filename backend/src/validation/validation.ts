@@ -1,9 +1,18 @@
+// validation
 import Joi from 'joi'
+import PasswordComplexity from 'joi-password-complexity'
 
-//----User Validation-------------
-
-export const UserValidInfo = Joi.object({
+//User input Validation
+export const userData = Joi.object({
   name: Joi.string().min(3).max(200).required(),
   email: Joi.string().email().max(200).required(),
-  password: Joi.string().min(6).pattern(new RegExp('^[a-z0-9]{6,25}$')),
+  password: PasswordComplexity({
+    min: 6,
+    max: 25,
+    lowerCase: 1,
+    //upperCase: 1,
+    numeric: 1,
+    //symbol: 1,
+    requirementCount: 4,
+  }),
 })

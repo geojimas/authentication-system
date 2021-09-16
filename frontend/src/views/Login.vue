@@ -3,12 +3,7 @@
     <form @submit.prevent="submit">
       <h2>Login</h2>
       <div class="controls">
-        <input
-          type="email"
-          v-model="data.email"
-          name="email"
-          required
-          placeholder="email" />
+        <input type="email" v-model="data.email" name="email" required placeholder="email" />
       </div>
       <div class="controls">
         <input
@@ -20,6 +15,12 @@
         />
       </div>
       <button>login</button>
+      <div class="acc">
+        <p>
+          Don't have an Account ??
+          <router-link to="/register" class="navbar-brand"> Sign up</router-link>
+        </p>
+      </div>
     </form>
   </div>
 </template>

@@ -1,26 +1,30 @@
+// Libraries
 import jwt from 'jsonwebtoken'
-import { NextFunction, Response } from 'express'
-import { IGetUserAuthInfoRequest } from 'src/types/UserInfoInterface'
+import { Response, NextFunction } from 'express'
+// Error handler
+import { Authorized, BadRequest } from '../utils/error'
 
-export const isAuth = (req: IGetUserAuthInfoRequest, res: Response, next: NextFunction) => {
-  const authHeader = req.headers['cookie']
-  // let token : string = ''
-  // if (authHeader) token  = authHeader.slice(7)
-  const token = authHeader && authHeader.split('=')[1]
+// Check the user if is Authenticated
+export const isAuth = (req: any, _res: Response, next: NextFunction): void => {
+  // take the jwt cookie from headers
+  const authHeader: string | undefined = req.headers['cookie']
 
-  if (!token) return res.status(401).json({ message: 'Access denied. Not authorized...' })
+  // if token exists then split
+  const token = authHeader ? authHeader && authHeader.split('=')[1] : ''
+  if (!token) throw new Authorized('Access denied. Not authorized...')
 
   try {
-    const jwtSecretKey: string = process.env.JWT_TOKEN || ''
+    const jwtSecretKey: string = process.env.SECRET_KEY ? process.env.SECRET_KEY : ''
     const decoded = jwt.verify(token, jwtSecretKey)
-    req.user = decoded // IGetUserAuthInfoRequest Interface
+    req.user = decoded
+
     return next()
   } catch (error) {
-    console.log(error)
+    next(error)
     if (error.message === 'jwt expired') {
-      return res.status(400).json({ message: 'jwt token has expired.' })
+      throw new BadRequest('jwt token has expired..')
     } else {
-      return res.status(400).json({ message: 'Invalid auth token...' })
+      throw new Authorized('Invalid auth token...')
     }
   }
 }

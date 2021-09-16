@@ -1,7 +1,21 @@
-### Custom Authentication with JWT practice with NodeJS / TypeScript in backend and VueJS ans JavaScript in frontend.
+### Full Stack Custom Authentication with JWT approach.
+### Tech Stack: 
+#### ● NodeJS with TypeScript in backend.
+#### ● VueJS with JavaScript in frontend.
+### Features
+#### ● Sign up functionality.
+#### ● Log in functionality.
+#### ● Log out functionality.
+#### ● Protected Routes.
+#### ● Public Routes.
+#### ● Error Handler.
+#### ● Input Validation.
+#### ● JWT authentication as a cookie in browser.
+#### ● Vue Router Guards.
+#### ● Store User in VUEX.
+####
 
-
-#### Setup locally
+### Setup locally.
 
 ```
 cd backend
@@ -12,11 +26,11 @@ cp .env.example .env
 ```
 
 ```
-npm install
+yarn install
 ```
 
 ```
-npm run dev
+yarn dev
 ```
 
 ```
@@ -24,9 +38,9 @@ cd frontend
 ```
 
 ```
-npm install
+yarn install
 ```
 
 ```
-npm run dev
+yarn dev
 ```

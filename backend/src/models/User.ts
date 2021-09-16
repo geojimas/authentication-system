@@ -1,4 +1,6 @@
+// Libraries
 import { model, Schema } from 'mongoose'
+// Interfaces
 import { UserInterface } from 'src/types/UserInterface'
 
 const userSchema = new Schema<UserInterface>({

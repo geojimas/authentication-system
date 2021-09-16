@@ -104,7 +104,15 @@ form {
   color: $primary;
 
   .controls {
-    margin: 30px;
+    margin: 25px;
+  }
+
+  .acc {
+    margin-top: 20px;
+    a {
+      color: $secondary;
+      text-decoration: none;
+    }
   }
 
   h2 {
@@ -125,7 +133,7 @@ input {
   }
 }
 button {
-  margin-top: 30px;
+  margin-top: 20px;
   border-radius: 36px;
   color: $primary;
   background: $secondary;
@@ -154,8 +162,9 @@ button {
   flex-direction: column;
   padding: 20px;
 
-  h2 {
-    margin-top: 50px;
+  h2,
+  h1 {
+    margin-top: 35px;
   }
 
   span {

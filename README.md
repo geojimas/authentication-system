@@ -2,7 +2,7 @@
 ### Tech Stack: 
 #### ● NodeJS with TypeScript in backend.
 #### ● VueJS with JavaScript in frontend.
-### Features
+### Features:
 #### ● Sign up functionality.
 #### ● Log in functionality.
 #### ● Log out functionality.

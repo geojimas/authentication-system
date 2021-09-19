@@ -3,18 +3,18 @@
 #### ● NodeJS with TypeScript in backend.
 #### ● VueJS with JavaScript in frontend.
 ### Features:
-#### ● Sign up functionality.
-#### ● Log in functionality.
-#### ● Log out functionality.
-#### ● Protected Routes.
+#### ● Sign up Page.
+#### ● Log in Page.
+#### ● Log out Page.
 #### ● Profile Page.
 #### ● Dashboard Page.
+#### ● Protected Routes.
 #### ● Public Routes.
 #### ● Error Handler.
 #### ● Input Validation.
 #### ● JWT authentication as a cookie in browser.
 #### ● Vue Router Guards.
-#### ● User info stored in VUEX.
+#### ● User information stored in VUEX.
 ####
 
 ### Setup locally.

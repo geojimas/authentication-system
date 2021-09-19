@@ -1,5 +1,5 @@
 <template>
-  <div class="register animate__animated animate__zoomIn">
+  <div class="register animate__animated animate__fadeIn">
     <form @submit.prevent="submit">
       <h2>Sign up</h2>
 

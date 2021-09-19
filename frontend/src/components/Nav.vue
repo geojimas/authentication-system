@@ -1,35 +1,60 @@
 <template>
-  <nav class="header animate__animated animate__zoomIn">
-    <div class="logo">
-      <router-link to="/" class="nav-link"
-        ><img src="../assets/logo.png" alt="logo" width="50"
-      /></router-link>
-    </div>
-
-    <div v-if="auth" class="username">
-      <h5>
-        <span class="log">Logged in as :</span>
-      </h5>
-      <div class="log">
-        Name:<span>{{ UserName.name }}</span>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark header animate__animated animate__fadeIn">
+    <div class="container-fluid">
+      <div class="logo">
+        <router-link to="/" class="nav-link"
+          ><img src="../assets/logo.png" alt="logo" width="50"
+        /></router-link>
       </div>
-      <div class="log">
-        Email:<span>{{ UserName.email }}</span>
-      </div>
-    </div>
-
-    <div class="actions">
-      <div v-if="auth" class="auth">
-        <div class="links">
-          <router-link to="/dashboard" class="navbar-brand">Dashboard</router-link>
-          <a href="#" class="nav-link" @click="logout">Logout</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="mb-3 mt-3 container auth">
+          <div class="links">
+            <router-link to="/">Home</router-link>
+          </div>
         </div>
-      </div>
 
-      <div v-else class="noAuth">
-        <div class="links">
-          <router-link to="/login" class="nav-link">Login</router-link>
-          <router-link to="/register" class="nav-link">Register</router-link>
+        <div v-if="auth" class="user container">
+          <h5>
+            <span class="log">Logged in as :</span>
+          </h5>
+          <div class="log">
+            Name:<span>{{ user.name }}</span>
+          </div>
+          <div class="log">
+            Email:<span>{{ user.email }}</span>
+          </div>
+        </div>
+
+        <div v-else class="d-flex container">
+        </div>
+
+        <div class="mb-3 d-flex">
+          <div v-if="auth" class="auth">
+            <div class="links">
+              <router-link to="/profile">Profile</router-link>
+              <router-link to="/dashboard">Dashboard</router-link>
+              <button @click="logout">Logout</button>
+            </div>
+          </div>
+
+          <div v-else class="noAuth">
+            <div class="links">
+              <router-link to="/login" >Login</router-link>
+              <router-link to="/register">Register</router-link>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -49,7 +74,7 @@ export default {
     const store = useStore()
     const router = useRouter()
     const auth = computed(() => store.state.authenticated)
-    const UserName = computed(() => {
+    const user = computed(() => {
       return store.getters.getUser
     })
 
@@ -71,7 +96,7 @@ export default {
     return {
       auth,
       logout,
-      UserName,
+      user,
     }
   },
 }

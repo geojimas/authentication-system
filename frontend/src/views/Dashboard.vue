@@ -1,7 +1,7 @@
 <template>
   <div v-if="auth" class="dashboard animate__animated animate__zoomIn">
     <h1>
-      Welcome <span>{{ UserName.name }}</span> !!
+      Welcome <span>{{ user.name }}</span> !!
     </h1>
     <h1>You are logged In !!</h1>
     <h2>Only Logged Users can watch this page.</h2>
@@ -20,7 +20,7 @@ export default {
     const content = ref('You are not logged in!')
     const store = useStore()
 
-    const UserName = computed(() => {
+    const user = computed(() => {
       return store.getters.getUser
     })
 
@@ -46,7 +46,7 @@ export default {
     })
 
     return {
-      UserName,
+      user,
       auth,
     }
   },

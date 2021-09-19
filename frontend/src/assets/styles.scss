@@ -1,8 +1,10 @@
+//  Color Variables
 $primary: #f3ebeb;
 $secondary: #f19317;
-$ground: #4b4949;
+$ground: #1d1b1b;
 $user: #ff3838;
 
+// Global Styles
 * {
   margin: 0;
   padding: 0;
@@ -10,35 +12,92 @@ $user: #ff3838;
   font-family: 'Rubik', sans-serif;
 }
 
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 360px;
+  color: $secondary;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: $ground;
+  color: $primary;
+
+  .controls {
+    margin: 25px;
+  }
+
+  .acc {
+    margin-top: 20px;
+    a {
+      color: $secondary;
+      text-decoration: none;
+    }
+  }
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+  }
+}
+input {
+  padding: 8px 2px;
+  border-radius: 4px;
+  border: 1px solid $primary;
+  width: 100%;
+  color: $ground;
+  font-size: 20px;
+  font-weight: bold;
+
+  &:focus {
+    outline: none;
+  }
+}
+button {
+  border-radius: 36px;
+  color: $primary;
+  background: $secondary;
+  border: 0;
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: $ground;
+  }
+  &:active {
+    cursor: pointer;
+    transform: scale(0.92);
+  }
+}
+
+// Home page Styles
 .home {
   display: flex;
   justify-content: center;
+  margin: 150px 20px 20px 20px;
   align-items: center;
   flex-direction: column;
 
-  h2,
-  h3 {
+  h2 {
     margin-top: 40px;
   }
 }
 
-.header {
-  background-color: $ground;
-  padding: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 70px;
-}
-
-.username {
-  border: 2px solid $primary;
+// Navigation Bar Styles
+.user {
   padding: 8px;
-  display: flex;
+  display: inline-block;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  border-radius: 20px;
   p {
     color: $primary;
   }
@@ -90,75 +149,12 @@ $user: #ff3838;
   margin-top: 130px;
 }
 
-form {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 360px;
-  color: $secondary;
-  margin: 0 auto;
-  padding: 20px;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  background-color: $ground;
-  color: $primary;
-
-  .controls {
-    margin: 25px;
-  }
-
-  .acc {
-    margin-top: 20px;
-    a {
-      color: $secondary;
-      text-decoration: none;
-    }
-  }
-
-  h2 {
-    display: flex;
-    justify-content: center;
-    text-decoration: underline;
-  }
-}
-input {
-  padding: 8px 1px;
-  border-radius: 4px;
-  border: 1px solid $primary;
-  font-size: 1em;
-  width: 100%;
-
-  &:focus {
-    outline: none;
-  }
-}
-button {
-  margin-top: 20px;
-  border-radius: 36px;
-  color: $primary;
-  background: $secondary;
-  border: 0;
-  font-weight: bold;
-  font-size: 16px;
-  display: block;
-  padding: 10px 16px;
-  letter-spacing: 2px;
-
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    text-decoration-color: $ground;
-  }
-  &:active {
-    cursor: pointer;
-    transform: scale(0.92);
-  }
-}
-
+// DashBoard Page Styles
 .dashboard {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 150px;
   flex-direction: column;
   padding: 20px;
 
@@ -172,6 +168,34 @@ button {
   }
 }
 
+// Profile Page Styles
+.profile {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 200px;
+
+  .info {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 25px;
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    span {
+      color: $user;
+      margin-left: 15px;
+    }
+  }
+}
+
+// Footer Page Styles
 .footer {
   bottom: 0;
   left: 0;
@@ -182,44 +206,98 @@ button {
   align-items: center;
   background-color: $ground;
   color: $primary;
-  padding: 20px;
+  padding: 15px;
   a {
     text-decoration: none;
     color: $primary;
   }
 }
 
-.notFound {
+// Not Found Page Styles
+.notfound {
+  height: 800px;
   display: flex;
+  background: url('../assets/p404.png'), $ground;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 
-  .in {
-    margin-top: 10px;
-    padding: 10px;
+  .content {
+    max-width: 600px;
+    text-align: center;
+
+    h2 {
+      font-size: 18vw;
+      color: $primary;
+      line-height: 1em;
+    }
+
+    h4 {
+      position: relative;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: $ground;
+      background: $primary;
+      font-weight: 300;
+      padding: 10px 20px;
+      display: inline-block;
+    }
+
+    p {
+      color: $primary;
+      font-size: 1.2em;
+    }
 
     a {
+      position: relative;
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: $secondary;
+      color: $primary;
       text-decoration: none;
-      color: $user;
-      font-weight: bold;
-      border: 3px solid $ground;
-      padding: 7px;
-      border-radius: 10px;
+      margin-top: 25px;
+      border-radius: 25px;
 
       &:hover {
         text-decoration: underline;
         text-decoration-color: $ground;
+        transform: scale(1.05);
       }
     }
   }
 }
 
+// Smartphone screen Styles
+@media only screen and (max-width: 600px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    .info{
+      margin-top: 50px;
+    }
+    img {
+      width: 100px;
+    }
+  }
+  .home {
+    margin-top: 0;
+  }
+  .dashboard {
+    margin-top: 0;
+  }
+}
+
+// Smartphone screen Styles
 @media only screen and (max-width: 450px) {
   .auth p {
     margin-right: 7px;
   }
   .logo img {
     width: 0;
+  }
+  .home {
+    h2 {
+      font-size: 20px;
+    }
   }
 }

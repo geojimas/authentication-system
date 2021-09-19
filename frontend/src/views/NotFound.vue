@@ -1,11 +1,10 @@
 <template>
-  <div class="notFound login animate__animated animate__zoomIn">
-    <h1><i class="far fa-frown"></i></h1>
-    <div class="in">
-      <h1>Page not Found</h1>
-    </div>
-    <div class="in">
-      <router-link to="/" class="nav-link">Back to Home</router-link>
+  <div class="notfound animate__animated animate__fadeIn">
+    <div class="content">
+      <h2>404</h2>
+      <h4>Opps ! Page not found</h4>
+      <p>The page you were looking for doesn't exists.</p>
+      <router-link to="/" class="navbar-brand">Back to Home</router-link>
     </div>
   </div>
 </template>

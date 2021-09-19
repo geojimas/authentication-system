@@ -1,4 +1,4 @@
-### Full Stack Custom Authentication with JWT approach.
+### Full Stack Custom Authentication with JWT strategy.
 ### Tech Stack: 
 #### ● NodeJS with TypeScript in backend.
 #### ● VueJS with JavaScript in frontend.
@@ -7,12 +7,14 @@
 #### ● Log in functionality.
 #### ● Log out functionality.
 #### ● Protected Routes.
+#### ● Profile Page.
+#### ● Dashboard Page.
 #### ● Public Routes.
 #### ● Error Handler.
 #### ● Input Validation.
 #### ● JWT authentication as a cookie in browser.
 #### ● Vue Router Guards.
-#### ● Store User in VUEX.
+#### ● User info stored in VUEX.
 ####
 
 ### Setup locally.

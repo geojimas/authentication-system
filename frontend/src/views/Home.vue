@@ -2,7 +2,7 @@
   <div class="home animate__animated animate__zoomIn">
     <h1>Welcome Page</h1>
     <h2>
-      JWT authentication with NodeJS-TypeScript in Backend and VueJS-JavaScript in frontend.
+      JWT authentication with NodeJS/TypeScript in Backend and VueJS/JavaScript in frontend.
     </h2>
     <h2>
       Try Register and Login Actions.

@@ -21,6 +21,15 @@ const routes = [
     },
   },
   {
+    path: '/profile',
+    name: 'Profile',
+    component: () => import('../views/Profile.vue'),
+    beforeEnter: (_to, _from, next) => {
+      if (!auth.value) next({ name: 'Login' })
+      else next()
+    },
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue'),

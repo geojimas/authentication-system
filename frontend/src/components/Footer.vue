@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer animate__animated animate__zoomIn">
+  <footer class="footer animate__animated animate__fadeIn">
     <div>
       <p>Copyright © 2021 by Dimitris Georgiadis</p>
     </div>

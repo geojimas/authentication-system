@@ -2,7 +2,7 @@
 import { Request, Response, NextFunction } from 'express'
 import bcrypt from 'bcrypt'
 // Models
-import User from '../models/User'
+import { User } from '../models/User'
 // Validation
 import { userData } from '../validation/validation'
 // Middlewares

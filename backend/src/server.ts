@@ -1,18 +1,18 @@
 // Libraries
-import * as dotenv from 'dotenv'
 import express, { Application } from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
 import helmet from 'helmet'
 import { json } from 'body-parser'
+import * as dotenv from 'dotenv'
+dotenv.config()
+
 //Error handler
 import { handleErrors } from './middleware/errorHandler'
 // Database
 import { connectDB } from './database/db'
 // Router
 import { router } from './routes/router'
-
-dotenv.config()
 
 const app: Application = express()
 

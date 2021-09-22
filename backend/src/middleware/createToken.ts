@@ -1,6 +1,8 @@
 // Libraries
 import jwt from 'jsonwebtoken'
 import mongoose from 'mongoose'
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 export const maxAge: number = 3 * 24 * 60 * 60 // 3 days
 

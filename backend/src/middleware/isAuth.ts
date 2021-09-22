@@ -1,6 +1,9 @@
 // Libraries
 import jwt from 'jsonwebtoken'
 import { Response, NextFunction } from 'express'
+import * as dotenv from 'dotenv'
+dotenv.config()
+
 // Error handler
 import { Authorized, BadRequest } from '../utils/error'
 

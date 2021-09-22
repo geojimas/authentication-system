@@ -90,7 +90,7 @@ export default {
       })
     }
 
-    // Forced Reload Page
+    // Forced the page to Reload
     // window.location.reload()
 
     return {

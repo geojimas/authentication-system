@@ -7,6 +7,7 @@
 #### ● Log in Page.
 #### ● Log out Page.
 #### ● Profile Page.
+#### ● Custom 404 Page.
 #### ● Dashboard Page.
 #### ● Protected Routes.
 #### ● Public Routes.

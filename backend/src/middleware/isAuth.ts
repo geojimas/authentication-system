@@ -27,7 +27,7 @@ export const isAuth = (req: any, _res: Response, next: NextFunction): void => {
     if (error.message === 'jwt expired') {
       throw new BadRequest('jwt token has expired..')
     } else {
-      throw new Authorized('Invalid auth token...')
+      throw new Authorized('Invalid token...')
     }
   }
 }

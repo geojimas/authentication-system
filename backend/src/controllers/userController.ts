@@ -33,7 +33,7 @@ export const signUp = async (req: Request, res: Response, next: NextFunction) =>
     const oldUser: UserInterface | null = await User.findOne({ email })
 
     if (oldUser) {
-      throw new Conflict('This Email is already is used...')
+      throw new Conflict('This Email is already in used...')
     } else {
       // encrypt the password
       const salt: string = await bcrypt.genSalt(10)

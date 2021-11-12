@@ -1,4 +1,4 @@
-### Full Stack Custom Authentication with JWT strategy.
+### Full Stack boilerplate Authentication with JWT strategy.
 ### Tech Stack: 
 #### ● NodeJS with TypeScript in backend.
 #### ● VueJS with JavaScript in frontend.

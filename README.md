@@ -15,7 +15,7 @@
 #### ● Input Validation.
 #### ● JWT authentication as a cookie in browser.
 #### ● Vue Router Guards.
-#### ● User information stored in VUEX.
+#### ● User information stored in Vuex Store.
 #### ● Responsive Design
 ####
 

@@ -16,10 +16,11 @@
 ### ● JWT authentication as an HTTP only cookie in browser.
 ### ● Vue Router Guards.
 ### ● User information stored persisted in Vuex.
-### ● Responsive Design
-### ● Modern Notifications
+### ● Responsive Design.
+### ● Modern Notifications.
+### ● Modern & Fast Package Manager (PnpM).
 
-## Setup locally.
+## Setup locally:
 
 ```
 cd backend
@@ -30,11 +31,11 @@ cp .env.example .env
 ```
 
 ```
-yarn install
+pnpm install
 ```
 
 ```
-yarn dev
+pnpm run dev
 ```
 
 ```
@@ -42,9 +43,9 @@ cd frontend
 ```
 
 ```
-yarn install
+pnpm install
 ```
 
 ```
-yarn dev
+pnpm run dev
 ```

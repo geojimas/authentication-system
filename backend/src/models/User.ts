@@ -21,4 +21,3 @@ const userSchema = new Schema<UserInterface>({
 })
 
 export const User = model<UserInterface>('User', userSchema)
-

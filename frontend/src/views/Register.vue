@@ -30,10 +30,10 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import Swal from 'sweetalert2'
-import axios from 'axios'
+import { useToast } from 'vue-toastification'
 import { useStore } from 'vuex'
 
 export default {
@@ -47,6 +47,7 @@ export default {
     const result = ref('')
     const router = useRouter()
     const store = useStore()
+    const toast = useToast()
 
     const submit = () => {
       axios
@@ -60,20 +61,17 @@ export default {
           store.dispatch('setUser', result.value)
           router.push('/login')
 
-          Swal.fire({
-            title: 'Success!',
-            text: 'User Register Successfully',
-            icon: 'success',
-            confirmButtonText: 'OK',
+          toast.success('User Register Successfully', {
+            timeout: 3000,
+            position: 'top-center',
+            icon: true,
           })
         })
         .catch(error => {
-          console.log(error)
-          Swal.fire({
-            title: 'error!',
-            text: error.response.data.message,
-            icon: 'error',
-            confirmButtonText: 'OK',
+          toast.error(`${error.response.data.message}`, {
+            timeout: 3000,
+            position: 'top-center',
+            icon: true,
           })
         })
     }

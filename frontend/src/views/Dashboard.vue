@@ -11,7 +11,7 @@
 <script>
 import { computed, onBeforeMount, ref } from 'vue'
 import { useStore } from 'vuex'
-import Swal from 'sweetalert2'
+import { useToast } from 'vue-toastification'
 import axios from 'axios'
 
 export default {
@@ -19,12 +19,9 @@ export default {
   setup() {
     const content = ref('You are not logged in!')
     const store = useStore()
-
-    const user = computed(() => {
-      return store.getters.getUser
-    })
-
-    const auth = computed(() => store.state.authenticated)
+    const toast = useToast()
+    const user = computed(() => store.getters.getUser)
+    const auth = computed(() => store.getters.getIfIsAuth)
 
     onBeforeMount(() => {
       axios
@@ -36,11 +33,10 @@ export default {
         .catch(error => {
           store.dispatch('setAuth', false)
 
-          Swal.fire({
-            title: 'error!',
-            text: error.response.data.message,
-            icon: 'error',
-            confirmButtonText: 'OK',
+          toast.error(`${error.response.data.message}`, {
+            timeout: 3000,
+            position: 'top-center',
+            icon: true,
           })
         })
     })

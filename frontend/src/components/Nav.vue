@@ -18,12 +18,6 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="mb-3 mt-3 container auth">
-          <div class="links">
-            <router-link to="/">Home</router-link>
-          </div>
-        </div>
-
         <div v-if="auth" class="user container">
           <h5>
             <span class="log">Logged in as :</span>
@@ -36,25 +30,21 @@
           </div>
         </div>
 
-        <div v-else class="d-flex container">
+        <div v-else class="container"></div>
+
+        <!-- Navication Links -->
+        <div v-if="auth" class="auth">
+          <div class="links">
+            <router-link to="/profile">Profile</router-link>
+            <router-link to="/dashboard">Dashboard</router-link>
+            <button @click="logout">Logout</button>
+          </div>
         </div>
-
-        <div class="mb-3 d-flex">
-          <div v-if="auth" class="auth">
-            <div class="links">
-              <router-link to="/profile">Profile</router-link>
-              <router-link to="/dashboard">Dashboard</router-link>
-              <button @click="logout">Logout</button>
-            </div>
+        <div v-else class="noAuth">
+          <div class="links">
+            <router-link to="/login">Login</router-link>
+            <router-link to="/register">Register</router-link>
           </div>
-
-          <div v-else class="noAuth">
-            <div class="links">
-              <router-link to="/login" >Login</router-link>
-              <router-link to="/register">Register</router-link>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -63,7 +53,7 @@
 
 <script>
 import axios from 'axios'
-import Swal from 'sweetalert2'
+import { useToast } from 'vue-toastification'
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
@@ -73,6 +63,7 @@ export default {
   setup() {
     const store = useStore()
     const router = useRouter()
+    const toast = useToast()
     const auth = computed(() => store.state.authenticated)
     const user = computed(() => {
       return store.getters.getUser
@@ -82,10 +73,11 @@ export default {
       axios.get('http://localhost:5000/logout', { withCredentials: true }).then(response => {
         store.dispatch('setAuth', false)
         router.push('/')
-        Swal.fire({
-          title: response.data.message,
-          icon: 'success',
-          confirmButtonText: 'OK',
+
+        toast.success(`${response.data.message}`, {
+          timeout: 3000,
+          position: 'top-center',
+          icon: true,
         })
       })
     }

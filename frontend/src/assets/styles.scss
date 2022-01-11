@@ -62,7 +62,7 @@ button {
   background: $secondary;
   border: 0;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   display: block;
   padding: 10px 16px;
   letter-spacing: 2px;
@@ -70,6 +70,7 @@ button {
   &:hover {
     cursor: pointer;
     text-decoration: underline;
+    color: #1d1b1b;
     text-decoration-color: $ground;
   }
   &:active {
@@ -94,8 +95,7 @@ button {
 // Navigation Bar Styles
 .user {
   padding: 8px;
-  display: inline-block;
-  justify-content: space-around;
+  display: flex;
   align-items: center;
   flex-direction: column;
   p {
@@ -114,13 +114,14 @@ button {
 .noAuth {
   display: flex;
   align-items: center;
+  padding: 10px;
 
   .links {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 1px;
     text-decoration: none;
     color: $primary;
@@ -293,11 +294,16 @@ button {
     margin-right: 7px;
   }
   .logo img {
-    width: 0;
+    display: none;
   }
   .home {
     h2 {
       font-size: 20px;
     }
+  }
+  .register,
+  .login {
+    margin-top: 0;
+    margin-top: 30px;
   }
 }

@@ -17,15 +17,13 @@
 <script>
 import { computed } from 'vue'
 import { useStore } from 'vuex'
+
 export default {
   name: 'Profile',
   setup() {
     const store = useStore()
-    const auth = computed(() => store.state.authenticated)
-
-    const user = computed(() => {
-      return store.getters.getUser
-    })
+    const auth = computed(() => store.getters.getIfIsAuth)
+    const user = computed(() => store.getters.getUser)
 
     return {
       auth,

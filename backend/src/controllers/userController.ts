@@ -11,10 +11,12 @@ import { createToken, maxAge } from '../middleware/createToken'
 import { UserInterface } from 'src/types/UserInterface'
 // Error Handler
 import { BadRequest, Conflict, NotFound } from '../utils/error'
+// HTTP Codes
+import { StatusCodes } from 'http-status-codes'
 
 // Only auth Users can access this page
 export const authPage = (_req: Request, res: Response): object => {
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     message: 'You are successfully Authenticated! , Only Auth Users watch this!',
   })
 }
@@ -42,19 +44,19 @@ export const signUp = async (req: Request, res: Response, next: NextFunction) =>
       // create user
       const user: UserInterface = await User.create({
         name: name,
-        email: email.toLowerCase(), // sanitize: convert email to lowercase
+        email: email.toLowerCase(),
         password: encryptedPassword,
       })
 
       // Create the Token
       const token: string = createToken(user._id)
-      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
+      res.cookie('access_token', token, { httpOnly: true, maxAge: maxAge * 1000 })
 
       // Save the User
       await user.save()
 
       // Response
-      return res.status(200).json({
+      return res.status(StatusCodes.CREATED).json({
         message: `User with Name '${req.body.name}' Created Successfully !`,
         user: user,
         token: token,
@@ -70,7 +72,7 @@ export const logIn = async (req: Request, res: Response, next: NextFunction) => 
   try {
     // Check if user already exists
     const user: UserInterface | null = await User.findOne({ email: req.body.email })
-    if (!user) throw new NotFound('User not found...')
+    if (!user) throw new NotFound("This User doesn't exist...")
 
     // Compare the passwords
     const password: boolean = await bcrypt.compare(req.body.password, user.password)
@@ -81,7 +83,7 @@ export const logIn = async (req: Request, res: Response, next: NextFunction) => 
     res.cookie('access_token', token, { httpOnly: true, maxAge: maxAge * 1000 })
 
     // Response
-    return res.status(200).json({
+    return res.status(StatusCodes.OK).json({
       message: `Welcome ${user.name} !`,
       User: user,
       Token: token,
@@ -93,7 +95,7 @@ export const logIn = async (req: Request, res: Response, next: NextFunction) => 
 
 // Logout User
 export const logout = (_req: Request, res: Response, _next: NextFunction) => {
-  return res.clearCookie('access_token').status(200).json({
+  return res.clearCookie('access_token').status(StatusCodes.OK).json({
     status: res.status,
     message: 'Successfully Log Out',
   })

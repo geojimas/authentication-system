@@ -22,6 +22,8 @@
 
 ## Setup locally:
 
+### Server :
+
 ```
 cd backend
 ```
@@ -37,7 +39,7 @@ pnpm install
 ```
 pnpm run dev
 ```
-
+### Client :
 ```
 cd frontend
 ```

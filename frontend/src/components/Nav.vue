@@ -64,10 +64,8 @@ export default {
     const store = useStore()
     const router = useRouter()
     const toast = useToast()
-    const auth = computed(() => store.state.authenticated)
-    const user = computed(() => {
-      return store.getters.getUser
-    })
+    const auth = computed(() => store.getters.getIfIsAuth)
+    const user = computed(() => store.getters.getUser)
 
     const logout = () => {
       axios.get('http://localhost:5000/logout', { withCredentials: true }).then(response => {

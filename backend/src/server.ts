@@ -24,8 +24,12 @@ app.use(
     origin: ['http://localhost:8080'],
   })
 )
+
+if ((process.env.NODE_ENV as string) !== 'production') {
+  app.use(morgan('dev'))
+}
+
 app.use(helmet())
-app.use(morgan('dev'))
 app.use(json())
 app.use(express.urlencoded({ extended: true }))
 // api prefix

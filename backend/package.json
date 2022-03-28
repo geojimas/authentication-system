@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --pretty --transpile-only src/server.ts",
     "build": "rimraf ./dist && tsc --build",
-    "prod": "node dist/server.js"
+    "start": "node dist/server.js"
   },
   "author": "Dimitris Georgiadis",
   "license": "ISC",

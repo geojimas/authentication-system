@@ -4,7 +4,9 @@
   "description": "Authentication with JWT in Node / Vue",
   "main": "server.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn --pretty --transpile-only src/server.ts"
+    "dev": "ts-node-dev --respawn --pretty --transpile-only src/server.ts",
+    "build": "rimraf ./dist && tsc --build",
+    "prod": "node dist/server.js"
   },
   "author": "Dimitris Georgiadis",
   "license": "ISC",
@@ -29,6 +31,7 @@
     "@types/morgan": "^1.9.2",
     "@types/node": "^15.12.4",
     "morgan": "^1.10.0",
+    "rimraf": "^3.0.2",
     "ts-node-dev": "^1.1.6",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.3.4"

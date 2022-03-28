@@ -25,6 +25,7 @@ app.use(
   })
 )
 
+// use morgan only on development
 if ((process.env.NODE_ENV as string) !== 'production') {
   app.use(morgan('dev'))
 }

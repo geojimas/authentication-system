@@ -18,7 +18,7 @@
 ### ● User information stored persisted in Vuex.
 ### ● Responsive Design.
 ### ● Modern Notifications.
-### ● Modern & Fast Package Manager (PnpM).
+
 
 ## Setup locally:
 
@@ -33,11 +33,11 @@ cp .env.example .env
 ```
 
 ```
-pnpm install
+npm install
 ```
 
 ```
-pnpm run dev
+npm run dev
 ```
 ### Client :
 ```
@@ -45,9 +45,9 @@ cd frontend
 ```
 
 ```
-pnpm install
+npm install
 ```
 
 ```
-pnpm run dev
+npm run dev
 ```

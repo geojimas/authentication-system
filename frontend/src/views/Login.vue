@@ -46,7 +46,7 @@ export default {
     const submit = () => {
       axios
         .post(
-          'http://localhost:5000/login',
+          'http://localhost:5000/api/login',
           {
             email: data.email,
             password: data.password,

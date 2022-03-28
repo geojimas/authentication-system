@@ -51,7 +51,7 @@ export default {
 
     const submit = () => {
       axios
-        .post('http://localhost:5000/register', {
+        .post('http://localhost:5000/api/register', {
           name: data.name,
           email: data.email,
           password: data.password,

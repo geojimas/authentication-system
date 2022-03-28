@@ -17,17 +17,19 @@ import { router } from './routes/router'
 const app: Application = express()
 
 // Middlewares
-app.use(helmet())
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:5000', 'http://localhost:8080'],
+    // frontend URL's
+    origin: ['http://localhost:8080'],
   })
 )
+app.use(helmet())
 app.use(morgan('dev'))
 app.use(json())
 app.use(express.urlencoded({ extended: true }))
-app.use(router)
+// api prefix
+app.use('/api', router)
 app.use(handleErrors)
 
 if (!process.env.PORT) {
@@ -40,5 +42,5 @@ connectDB()
 // Starting the Server
 app.listen(process.env.PORT || 5000, () => {
   console.log(`server start running at port ${process.env.PORT}`)
-  console.log(`Server is Live here -> http://localhost:${process.env.PORT}`)
+  console.log(`Server is Live here -> http://localhost:${process.env.PORT}/api/dashboard`)
 })

@@ -68,7 +68,7 @@ export default {
     const user = computed(() => store.getters.getUser)
 
     const logout = () => {
-      axios.get('http://localhost:5000/logout', { withCredentials: true }).then(response => {
+      axios.get('http://localhost:5000/api/logout', { withCredentials: true }).then(response => {
         store.dispatch('setAuth', false)
         router.push('/')
 

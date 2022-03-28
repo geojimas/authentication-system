@@ -25,7 +25,7 @@ export default {
 
     onBeforeMount(() => {
       axios
-        .get('http://localhost:5000/dashboard', { withCredentials: true })
+        .get('http://localhost:5000/api/dashboard', { withCredentials: true })
         .then(response => {
           content.value = response.data.message
           store.dispatch('setAuth', true)

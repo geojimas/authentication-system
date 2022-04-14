@@ -4,7 +4,6 @@ import express from 'express'
 import { isAuth } from '../middleware/isAuth'
 // Controllers
 import { authPage, logIn, logout, signUp } from '../controllers/userController'
-import { StatusCodes } from 'http-status-codes'
 
 export const router = express.Router()
 
@@ -16,11 +15,3 @@ router.post('/login', logIn)
 router.get('/logout', isAuth, logout)
 router.get('/dashboard', isAuth, authPage)
 
-// Catch all route
-router.get('*', (req, res) => {
-  // Response
-  return res.status(StatusCodes.NOT_FOUND).json({
-    message: `Requested URL '${req.path}' not founded !`,
-    solution: 'Please navigate to /api/dashboard'
-  })
-})

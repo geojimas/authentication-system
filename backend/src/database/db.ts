@@ -7,11 +7,13 @@ export const connectDB = async (): Promise<void> => {
   try {
     const conn = await connect(process.env.MONGO_URI as string)
 
+    console.log('-----------------------------')
+    console.log('MongoDB')
     console.log(`Host: ${conn.connection.host}`)
     console.log(`Name: ${conn.connection.name}`)
     console.log(`Port: ${conn.connection.port}`)
     console.log('-----------------------------')
-    console.log('MongoDB connected Successfully!')
+    console.log('Database connected Successfully!')
 
   } catch (error) {
     console.log(error)

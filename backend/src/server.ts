@@ -1,7 +1,6 @@
 // Libraries
 import express, { Application } from 'express'
 import cors from 'cors'
-import morgan from 'morgan'
 import helmet from 'helmet'
 import { json } from 'body-parser'
 import * as dotenv from 'dotenv'
@@ -25,11 +24,6 @@ app.use(
   })
 )
 
-// use morgan only on development
-if ((process.env.NODE_ENV as string) !== 'production') {
-  app.use(morgan('dev'))
-}
-
 app.use(helmet())
 app.use(json())
 app.use(express.urlencoded({ extended: true }))
@@ -46,6 +40,7 @@ connectDB()
 
 // Starting the Server
 app.listen(process.env.PORT || 5000, () => {
+  console.log('-----------------------------')
   console.log(`server start running at port ${process.env.PORT}`)
   console.log(`Server is Live here -> http://localhost:${process.env.PORT}/api/dashboard`)
 })

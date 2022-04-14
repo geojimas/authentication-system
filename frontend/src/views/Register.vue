@@ -30,11 +30,11 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useToast } from 'vue-toastification'
 import { useStore } from 'vuex'
+import { client } from '../utils/config'
 
 export default {
   name: 'Register',
@@ -50,8 +50,8 @@ export default {
     const toast = useToast()
 
     const submit = () => {
-      axios
-        .post('http://localhost:5000/api/register', {
+      client
+        .post('register', {
           name: data.name,
           email: data.email,
           password: data.password,

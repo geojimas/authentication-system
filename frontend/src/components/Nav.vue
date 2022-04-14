@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { client } from '../utils/config'
 import { useToast } from 'vue-toastification'
 import { computed } from 'vue'
 import { useStore } from 'vuex'
@@ -68,7 +68,7 @@ export default {
     const user = computed(() => store.getters.getUser)
 
     const logout = () => {
-      axios.get('http://localhost:5000/api/logout', { withCredentials: true }).then(response => {
+      client.get('/logout').then(response => {
         store.dispatch('setAuth', false)
         router.push('/')
 

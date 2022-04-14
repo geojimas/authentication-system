@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { client } from '../utils/config'
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
@@ -44,14 +44,13 @@ export default {
     const toast = useToast()
 
     const submit = () => {
-      axios
+      client
         .post(
-          'http://localhost:5000/api/login',
+          '/login',
           {
             email: data.email,
             password: data.password,
-          },
-          { withCredentials: true }
+          }
         )
         .then(response => {
           store.dispatch('setAuth', true)

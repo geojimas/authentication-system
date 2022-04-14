@@ -12,7 +12,7 @@
 import { computed, onBeforeMount, ref } from 'vue'
 import { useStore } from 'vuex'
 import { useToast } from 'vue-toastification'
-import axios from 'axios'
+import { client } from '../utils/config'
 
 export default {
   name: 'Home',
@@ -24,8 +24,8 @@ export default {
     const auth = computed(() => store.getters.getIfIsAuth)
 
     onBeforeMount(() => {
-      axios
-        .get('http://localhost:5000/api/dashboard', { withCredentials: true })
+      client
+        .get('/dashboard')
         .then(response => {
           content.value = response.data.message
           store.dispatch('setAuth', true)

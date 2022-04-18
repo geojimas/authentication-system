@@ -31,7 +31,7 @@
   },
   "paths": {
     "src/*": [
-      "./src/*"
+      "./*"
     ],
     "tests/*": [
       "./tests/*"
@@ -41,7 +41,7 @@
     "node_modules"
   ],
   "include": [
-    "./src/**/*.ts",
-    "./tests/**/*.ts"
+    "./server/**/*.ts",
+    "./server/tests/**/*.ts"
   ]
 }

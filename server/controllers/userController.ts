@@ -8,7 +8,7 @@ import { userData } from '../validation/validation'
 // Middlewares
 import { createToken, maxAge } from '../middleware/createToken'
 // Interfaces
-import { UserInterface } from 'src/types/UserInterface'
+import { UserInterface } from '../types/UserInterface'
 // Error Handler
 import { BadRequest, Conflict, NotFound } from '../utils/error'
 // HTTP Codes
@@ -50,7 +50,11 @@ export const signUp = async (req: Request, res: Response, next: NextFunction) =>
 
       // Create the Token
       const token: string = createToken(user._id)
-      res.cookie('access_token', token, { httpOnly: true, maxAge: maxAge * 1000 })
+      res.cookie('access_token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV !== 'development',
+        maxAge: maxAge * 1000,
+      })
 
       // Save the User
       await user.save()

@@ -1,7 +1,7 @@
 // Libraries
 import { model, Schema } from 'mongoose'
 // Interfaces
-import { UserInterface } from 'src/types/UserInterface'
+import { UserInterface } from 'server/types/UserInterface'
 
 const userSchema = new Schema<UserInterface>({
   name: {

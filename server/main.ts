@@ -4,6 +4,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import { json } from 'body-parser'
+// import path from 'path'
 import * as dotenv from 'dotenv'
 dotenv.config()
 
@@ -39,6 +40,13 @@ if (!process.env.PORT) {
 
 if ((process.env.NODE_ENV as string) !== 'production') {
   app.use(morgan('dev'))
+
+  /*ENABLE THIS FOR DEPLOYMENT */
+
+  // app.use(express.static(path.join(__dirname, './dist')))
+  // app.get('/*', (_req, res) => {
+  //   res.sendFile(path.join(__dirname, './dist', 'index.html'))
+  // })
 }
 
 // call and connect to Database

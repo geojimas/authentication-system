@@ -17,7 +17,7 @@ import { StatusCodes } from 'http-status-codes'
 // Only auth Users can access this page
 export const authPage = (_req: Request, res: Response): object => {
   return res.status(StatusCodes.OK).json({
-    message: 'You are successfully Authenticated! , Only Auth Users watch this!',
+    message: 'You are successfully Authenticated! , Only Auth Users watch this!'
   })
 }
 
@@ -45,7 +45,7 @@ export const signUp = async (req: Request, res: Response, next: NextFunction) =>
       const user: UserInterface = await User.create({
         name: name,
         email: email.toLowerCase(),
-        password: encryptedPassword,
+        password: encryptedPassword
       })
 
       // Create the Token
@@ -53,7 +53,7 @@ export const signUp = async (req: Request, res: Response, next: NextFunction) =>
       res.cookie('access_token', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV !== 'development',
-        maxAge: maxAge * 1000,
+        maxAge: maxAge * 1000
       })
 
       // Save the User
@@ -63,7 +63,7 @@ export const signUp = async (req: Request, res: Response, next: NextFunction) =>
       return res.status(StatusCodes.CREATED).json({
         message: `User with Name '${req.body.name}' Created Successfully !`,
         user: user,
-        token: token,
+        token: token
       })
     }
   } catch (error) {
@@ -89,8 +89,8 @@ export const logIn = async (req: Request, res: Response, next: NextFunction) => 
     // Response
     return res.status(StatusCodes.OK).json({
       message: `Welcome ${user.name} !`,
-      User: user,
-      Token: token,
+      user: user,
+      token: token
     })
   } catch (error) {
     return next(error)
@@ -101,6 +101,6 @@ export const logIn = async (req: Request, res: Response, next: NextFunction) => 
 export const logout = (_req: Request, res: Response, _next: NextFunction) => {
   return res.clearCookie('access_token').status(StatusCodes.OK).json({
     status: res.status,
-    message: 'Successfully Log Out',
+    message: 'Successfully Log Out'
   })
 }

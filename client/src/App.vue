@@ -1,18 +1,13 @@
 <template>
   <main>
-    <Nav />
-    <router-view />
-    <Footer />
+    <NavBar />
+    <RouterView />
+    <FooTerVue />
   </main>
 </template>
 
-<script>
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer.vue'
-export default {
-  components: {
-    Nav,
-    Footer,
-  },
-}
+<script setup>
+import { RouterView } from 'vue-router'
+import NavBar from './components/NavBar.vue'
+import FooTerVue from './components/FooTer.vue'
 </script>

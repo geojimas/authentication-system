@@ -1,23 +1,23 @@
 ## Full Stack boilerplate Authentication with JWT strategy.
 ## Tech Stack: 
-### ● NodeJS with TypeScript in backend.
-### ● VueJS with JavaScript in frontend.
+### ● NodeJS with TypeScript in back-end.
+### ● VueJS with JavaScript in front-end.
 ## Features:
-### ● Sign up Page.
+### ● Register Page.
 ### ● Log in Page.
 ### ● Log out Page.
 ### ● Profile Page.
-### ● Custom 404 Page.
 ### ● Dashboard Page.
-### ● Protected Routes.
-### ● Public Routes.
+### ● Custom 404 Page.
+### ● Vue Route Guards.
+### ● Private / Protected Routes.
+### ● User information stored persisted in Pinia.
+### ● Responsive Design with Tailwind CSS.
+### ● Modern Notifications.
 ### ● Error Handler.
 ### ● Input Validation.
-### ● JWT authentication as an HTTP only cookie in browser.
-### ● Vue Router Guards.
-### ● User information stored persisted in Vuex.
-### ● Responsive Design.
-### ● Modern Notifications.
+### ● JWT authentication as an HTTP only cookie in browser. (Safer method)
+
 
 
 ## Setup locally:
@@ -25,29 +25,24 @@
 ### Server :
 
 ```
-cd backend
+cd server
 ```
-
 ```
 cp .env.example .env
 ```
-
 ```
 npm install
 ```
-
 ```
 npm run dev
 ```
 ### Client :
 ```
-cd frontend
+cd client
 ```
-
 ```
 npm install
 ```
-
 ```
 npm run dev
 ```

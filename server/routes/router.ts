@@ -14,4 +14,3 @@ router.post('/login', logIn)
 // Protected Routes
 router.get('/logout', isAuth, logout)
 router.get('/dashboard', isAuth, authPage)
-

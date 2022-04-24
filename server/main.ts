@@ -22,7 +22,7 @@ app.use(
   cors({
     credentials: true,
     // frontend URL's
-    origin: ['http://localhost:8080'],
+    origin: ['http://localhost:3000'],
   })
 )
 

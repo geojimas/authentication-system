@@ -1,35 +1,35 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
+  "name": "client",
+  "version": "0.0.0",
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --port 5050",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^0.26.1",
-    "core-js": "^3.21.1",
-    "vue": "^3.2.31",
+    "pinia": "^2.0.13",
+    "pinia-plugin-persistedstate": "^1.5.1",
+    "vue": "^3.2.33",
     "vue-router": "^4.0.14",
-    "vue-toastification": "^2.0.0-rc.5",
-    "vuex": "^4.0.2",
-    "vuex-persistedstate": "^4.0.0-beta.3"
+    "vue-toastification": "^2.0.0-rc.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@babel/eslint-parser": "^7.17.0",
-    "@vue/cli-plugin-babel": "~5.0.4",
-    "@vue/cli-plugin-eslint": "~5.0.4",
-    "@vue/cli-plugin-router": "~5.0.4",
-    "@vue/cli-plugin-vuex": "~5.0.4",
-    "@vue/cli-service": "~5.0.4",
-    "@vue/compiler-sfc": "^3.2.31",
-    "eslint": "^8.12.0",
-    "eslint-plugin-vue": "^8.5.0",
-    "sass": "^1.49.9",
-    "sass-loader": "^12.6.0",
-    "webpack": "^5.70.0"
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "autoprefixer": "^10.4.5",
+    "eslint": "^8.14.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "postcss": "^8.4.12",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.24",
+    "vite": "^2.9.5"
   }
 }

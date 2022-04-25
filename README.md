@@ -25,9 +25,6 @@
 ### Server :
 
 ```
-cd server
-```
-```
 cp .env.example .env
 ```
 ```

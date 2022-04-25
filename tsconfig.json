@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "es2018",
     "module": "commonjs",
-    "lib": [
-      "dom",
-      "es2018",
-      "esnext.asynciterable"
-    ],
+    "lib": ["dom", "es2018", "esnext.asynciterable"],
     "sourceMap": true,
     "outDir": "./prod",
     "moduleResolution": "node",
@@ -29,19 +25,6 @@
     "resolveJsonModule": true,
     "baseUrl": "."
   },
-  "paths": {
-    "src/*": [
-      "./*"
-    ],
-    "tests/*": [
-      "./tests/*"
-    ]
-  },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "./server/**/*.ts",
-    "./server/tests/**/*.ts"
-  ]
+  "include": ["./**/*"],
+  "exclude": ["node_modules", "client"]
 }

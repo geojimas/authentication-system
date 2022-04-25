@@ -4,8 +4,8 @@
   "description": "Authentication with JWT in Node / Vue",
   "main": "main.ts",
   "engines": {
-    "node": "16.x",
-    "npm": "8.x"
+    "node": "16.13.0",
+    "npm": "8.7.0"
   },
   "scripts": {
     "dev": "ts-node-dev --respawn --pretty --transpile-only main.ts",
@@ -13,7 +13,7 @@
     "start": "node prod/main.js"
   },
   "author": "Dimitris Georgiadis",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",

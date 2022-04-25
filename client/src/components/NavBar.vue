@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-900 text-gray-100 py-3.5 px-6 shadow md:flex justify-between">
     <router-link to="/" class="flex items-center">
-      <img width="30" height="30" src="https://img.icons8.com/emoji/48/000000/diamond-suit.png" />
+      <img width="30" height="30" src="/logo.png" />
       <h1 class="text-xl">Gromet</h1>
     </router-link>
     <ul

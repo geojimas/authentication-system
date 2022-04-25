@@ -5,8 +5,8 @@
   "main": "main.ts",
   "scripts": {
     "dev": "ts-node-dev --respawn --pretty --transpile-only server/main.ts",
-    "build": "rimraf ./dist && tsc --build",
-    "start": "node dist/main.js"
+    "build": "rimraf ./prod && tsc --build",
+    "start": "node prod/main.js"
   },
   "author": "Dimitris Georgiadis",
   "license": "ISC",

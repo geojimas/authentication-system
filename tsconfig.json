@@ -8,7 +8,7 @@
       "esnext.asynciterable"
     ],
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": "./prod",
     "moduleResolution": "node",
     "declaration": false,
     "composite": false,

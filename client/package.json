@@ -1,6 +1,10 @@
 {
   "name": "client",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.x",
+    "npm": "7.x"
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center bg-slate-600 w-screen h-screen">
+  <div class="flex items-center justify-center mt-24">
     <div class="px-40 py-20 bg-white rounded-md shadow-2xl">
       <div class="flex flex-col items-center">
         <h1 class="font-bold text-blue-600 text-9xl">404</h1>

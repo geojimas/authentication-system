@@ -4,7 +4,7 @@
       <div class="bg-slate-700 rounded-xl m-16 border">
         <div class="flex flex-col p-10 px-16 space-y-6 items-center text-center">
           <h1 class="font-light md:text-6xl text-5xl text-white tracking-wide">
-            Welcome <span>{{ user.name }}</span> !!
+            Welcome <span class="text-red-600">{{ user.name }}</span> !!
           </h1>
           <p class="text-gray-400 md:text-2xl text-xl px-18">
             You are logged In !! Only Logged Users can watch this page.

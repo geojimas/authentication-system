@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev --respawn --pretty --transpile-only main.ts",
-    "build": "cd client && npm install && npm run build && cd.. && rimraf ./prod && tsc --build && ",
+    "build": "rimraf ./prod && tsc --build",
     "start": "node prod/main.js"
   },
   "author": "Dimitris Georgiadis",

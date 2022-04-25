@@ -5,7 +5,7 @@
   "main": "main.ts",
   "engines": {
     "node": "16.x",
-    "npm": "7.x"
+    "npm": "8.x"
   },
   "scripts": {
     "dev": "ts-node-dev --respawn --pretty --transpile-only main.ts",

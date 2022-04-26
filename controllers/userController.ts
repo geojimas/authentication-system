@@ -52,7 +52,7 @@ export const signUp = async (req: Request, res: Response, next: NextFunction) =>
       const token: string = createToken(user._id)
       res.cookie('access_token', token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV !== 'development',
+        secure: true,
         maxAge: maxAge * 1000
       })
 
@@ -84,7 +84,11 @@ export const logIn = async (req: Request, res: Response, next: NextFunction) => 
 
     // Create Token
     const token = createToken(user._id)
-    res.cookie('access_token', token, { httpOnly: true, maxAge: maxAge * 1000 })
+    res.cookie('access_token', token, {
+      httpOnly: true,
+      secure: true,
+      maxAge: maxAge * 1000
+    })
 
     // Response
     return res.status(StatusCodes.OK).json({

@@ -2,7 +2,6 @@
 import express, { Application } from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
-import morgan from 'morgan'
 import { json } from 'body-parser'
 import path from 'path'
 import * as dotenv from 'dotenv'
@@ -27,9 +26,6 @@ app.use(
 )
 
 app.use(helmet())
-if ((process.env.NODE_ENV as string) === 'development') {
-  app.use(morgan('dev'))
-}
 app.use(json())
 app.use(express.urlencoded({ extended: true }))
 // api prefix

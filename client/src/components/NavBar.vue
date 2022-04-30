@@ -77,7 +77,7 @@ const logout = () => {
       console.log(error)
       toast.error(`${error.response.data.message}`, {
         timeout: 3000,
-        position: 'top-right',
+        position: 'top-center',
         icon: true
       })
     })

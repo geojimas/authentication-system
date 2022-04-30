@@ -22,5 +22,4 @@ import { userStore } from '../stores/user'
 
 const store = userStore()
 const user = computed(() => store.userInfo)
-console.log(user)
 </script>

@@ -93,7 +93,7 @@ const submit = () => {
       router.push('/dashboard')
       toast.success('User Register Successfully', {
         timeout: 1500,
-        position: 'top-right',
+        position: 'top-center',
         icon: true
       })
     })
@@ -101,7 +101,7 @@ const submit = () => {
       console.log(error)
       toast.error(`${error.response.data.message}`, {
         timeout: 3000,
-        position: 'top-right',
+        position: 'top-center',
         icon: true
       })
     })

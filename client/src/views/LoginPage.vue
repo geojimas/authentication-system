@@ -81,7 +81,7 @@ const submit = () => {
       })
       router.push('/dashboard')
       toast.success(`${response.data.message}`, {
-        timeout: 1500,
+        timeout: 2000,
         position: 'top-center',
         icon: true
       })

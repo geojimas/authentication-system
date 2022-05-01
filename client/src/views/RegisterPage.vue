@@ -100,7 +100,7 @@ const submit = () => {
     .catch(error => {
       console.log(error)
       toast.error(`${error.response.data.message}`, {
-        timeout: 3000,
+        timeout: 2000,
         position: 'top-center',
         icon: true
       })

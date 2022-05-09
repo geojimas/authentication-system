@@ -6,7 +6,7 @@ export const BASE_API_URLS = [
 ]
 
 const api = axios.create({
-  baseURL: BASE_API_URLS[1].endpoint,
+  baseURL: BASE_API_URLS[0].endpoint,
   timeout: 1000,
   withCredentials: true,
   headers: { 'Content-Type': 'application/json' }

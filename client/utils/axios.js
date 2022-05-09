@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const BASE_API_URLS = [
   { name: 'Localhost', endpoint: 'http://localhost:5000/api' },
-  { name: 'Production', endpoint: 'https://climax245.herokuapp.com/api' }
+  { name: 'Production', endpoint: 'https://gromet.herokuapp.com/api' }
 ]
 
 const api = axios.create({

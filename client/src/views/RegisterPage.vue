@@ -60,7 +60,6 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { userStore } from '../stores/user'
 import { useToast } from 'vue-toastification'
 import { api } from '../../utils/axios'
 
@@ -69,9 +68,8 @@ const data = reactive({
   email: '',
   password: ''
 })
-const result = ref('')
+const user = ref('')
 const router = useRouter()
-const store = userStore()
 const toast = useToast()
 
 const submit = () => {
@@ -82,16 +80,9 @@ const submit = () => {
       password: data.password
     })
     .then(response => {
-      result.value = response.data.User
-      store.$patch(state => {
-        state.isLoggedIn = true
-        state.userInfo = {
-          name: response.data.user.name,
-          email: response.data.user.email
-        }
-      })
-      router.push('/dashboard')
-      toast.success('User Register Successfully', {
+      user.value = response.data.user
+      router.push('/login')
+      toast.success(`user ${user.value.name} created successfully`, {
         timeout: 2000,
         position: 'top-center',
         icon: true

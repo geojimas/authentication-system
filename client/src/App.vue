@@ -1,8 +1,8 @@
 <template>
   <main>
-    <NavBar />
+    <NavBar v-if="$route.path !== '/login' && $route.path !== '/register'" />
     <RouterView />
-    <FooTerVue />
+    <FooTerVue v-if="$route.path !== '/login' && $route.path !== '/register'" />
   </main>
 </template>
 

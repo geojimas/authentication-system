@@ -48,22 +48,13 @@ export const signUp = async (req: Request, res: Response, next: NextFunction) =>
         password: encryptedPassword
       })
 
-      // Create the Token
-      const token: string = createToken(user._id)
-      res.cookie('access_token', token, {
-        httpOnly: true,
-        secure: true,
-        maxAge: maxAge * 1000
-      })
-
       // Save the User
       await user.save()
 
       // Response
       return res.status(StatusCodes.CREATED).json({
         message: `User with Name '${req.body.name}' Created Successfully !`,
-        user: user,
-        token: token
+        user: user
       })
     }
   } catch (error) {

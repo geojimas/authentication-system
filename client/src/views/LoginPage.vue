@@ -11,16 +11,24 @@
             name="email"
             v-model="data.email"
             required
-            class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" />
+            class="py-2 px-3 border-2 border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" />
         </div>
         <div class="mb-4">
-          <label class="block mb-1" for="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            v-model="data.password"
-            class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" />
+          <label class="mb-1" for="password">Password</label>
+          <div class="flex items-center">
+            <input
+              :type="showPass ? 'text' : 'password'"
+              name="password"
+              required
+              v-model="data.password"
+              class="py-2 px-3 border-l-2 border-y-2 border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-l-md shadow-sm disabled:bg-gray-100 mt-1 w-full" />
+            <div
+              @click="showPass = !showPass"
+              class="py-3 px-1 mt-1 border-y-2 border-r-2 hover:cursor-pointer border-gray-300 rounded-r-md">
+              <EyeOff v-if="showPass" />
+              <EyeOn v-else />
+            </div>
+          </div>
         </div>
         <div class="mt-6 flex items-center justify-between">
           <div class="flex items-center">
@@ -52,16 +60,19 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { userStore } from '../stores/user'
 import { useToast } from 'vue-toastification'
 import { api } from '../../utils/axios'
+import EyeOn from '../components/EyeOn.vue'
+import EyeOff from '../components/EyeOff.vue'
 
 const data = reactive({
   email: '',
   password: ''
 })
+const showPass = ref(false)
 const router = useRouter()
 const store = userStore()
 const toast = useToast()

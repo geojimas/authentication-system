@@ -85,7 +85,7 @@ const toast = useToast()
 
 const submit = () => {
   api
-    .post('register', {
+    .post('/register', {
       name: data.name,
       email: data.email,
       password: data.password

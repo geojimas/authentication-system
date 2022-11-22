@@ -50,5 +50,7 @@ connectDB()
 app.listen(process.env.PORT || 5000, () => {
   console.log('-----------------------------')
   console.log(`server start running at port ${process.env.PORT}`)
-  console.log(`Server is Live here -> http://localhost:${process.env.PORT}`)
+  if (process.env.NODE_ENV === 'Localhost')
+    console.log(`Server is Live here -> http://localhost:${process.env.PORT}`)
+  else console.log(`Server is Live in production URL`)
 })

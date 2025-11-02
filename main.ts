@@ -39,7 +39,7 @@ if (!parseInt(process.env.PORT as string)) {
 /*ENABLE THIS FOR PRODUCTION */
 
 app.use(express.static(path.join(__dirname, '../client/dist')))
-app.get('/*', (_req, res) => {
+app.get('/*', (_req: express.Request, res: express.Response) => {
   res.sendFile(path.join(__dirname, '../client/dist', 'index.html'))
 })
 

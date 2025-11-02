@@ -49,14 +49,14 @@ app.use(errorHandler_1.handleErrors);
 if (!parseInt(process.env.PORT)) {
     process.exit(1);
 }
-app.use(express_1.default.static(path_1.default.join(__dirname, '../client/dist')));
+app.use(express_1.default.static(path_1.default.join(__dirname, './client/dist')));
 app.get('/*', (_req, res) => {
-    res.sendFile(path_1.default.join(__dirname, '../client/dist', 'index.html'));
+    res.sendFile(path_1.default.join(__dirname, './client/dist', 'index.html'));
 });
 (0, db_1.connectDB)();
 app.listen(process.env.PORT || 5000, () => {
     console.log('-----------------------------');
-    if (process.env.NODE_ENV === 'Localhost') {
+    if (process.env.NODE_ENV === 'development') {
         console.log(`server start running at port ${process.env.PORT}`);
         console.log(`Server is Live here -> http://localhost:${process.env.PORT}`);
     }

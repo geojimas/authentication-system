@@ -1,12 +1,12 @@
-import { connect } from 'mongoose'
+import mongoose, { connect } from 'mongoose'
 import * as dotenv from 'dotenv'
 import console from 'console'
 dotenv.config()
 
 export const connectDB = async (): Promise<void> => {
   try {
+    mongoose.set('strictQuery', true);
     const conn = await connect(process.env.MONGO_URI as string)
-
     console.log('-----------------------------')
     console.log('MongoDB')
     console.log(`Host: ${conn.connection.host}`)

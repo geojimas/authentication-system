@@ -36,7 +36,7 @@ if (!parseInt(process.env.PORT as string)) {
   process.exit(1)
 }
 
-/*ENABLE THIS FOR DEPLOYMENT */
+/*ENABLE THIS FOR PRODUCTION */
 
 app.use(express.static(path.join(__dirname, '../client/dist')))
 app.get('/*', (_req, res) => {
@@ -49,7 +49,7 @@ connectDB()
 // Starting the Server
 app.listen(process.env.PORT || 5000, () => {
   console.log('-----------------------------')
-  if (process.env.NODE_ENV === 'Localhost') {
+  if (process.env.NODE_ENV === 'development') {
     console.log(`server start running at port ${process.env.PORT}`)
     console.log(`Server is Live here -> http://localhost:${process.env.PORT}`)
   } else console.log(`Server is Live in production URL`)
